@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/authorPicture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/unknown_author"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/title"
+        android:text="Title"
+        android:maxLines="2"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/authorPicture"
+        android:layout_toStartOf="@+id/authorPicture" />
+
+    <TextView
+        android:id="@+id/published"
+        android:text="Published 2017-08-23 by Hannes Gruber"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="9sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_toLeftOf="@+id/authorPicture"
+        android:layout_toStartOf="@+id/authorPicture" />
+
+    <TextView
+        android:id="@+id/description"
+        android:text="Description"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/published"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_toLeftOf="@+id/authorPicture"
+        android:layout_toStartOf="@+id/authorPicture" />
+
+</RelativeLayout>

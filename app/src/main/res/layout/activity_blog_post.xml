@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.jayway.androidinstantapplab.BlogPostDetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/authorPicture"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/unknown_author"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp" />
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Title of blog post"
+                        android:textStyle="bold"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMaxTextSize="60sp"
+                        app:autoSizeMinTextSize="10sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/authorPicture"
+                        android:layout_toStartOf="@+id/authorPicture" />
+
+                    <TextView
+                        android:id="@+id/published"
+                        android:text="Published 2017-08-23 by Hannes Gruber"
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title"
+                        android:layout_alignLeft="@+id/title"
+                        android:layout_alignStart="@+id/title"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="bottom"
+                        android:layout_toLeftOf="@+id/authorPicture"
+                        android:layout_toStartOf="@+id/authorPicture" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text"
+                    android:text="Description"
+                    android:textSize="16sp"
+                    android:textColorLink="#00a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="80dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="bottom|end"
+        app:backgroundTint="@color/colorPrimary"
+        app:rippleColor="#999"
+        app:srcCompat="@drawable/ic_share_white_36dp" />
+
+</android.support.design.widget.CoordinatorLayout>
