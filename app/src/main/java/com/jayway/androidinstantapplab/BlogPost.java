@@ -2,22 +2,20 @@ package com.jayway.androidinstantapplab;
 
 class BlogPost {
 
-    private String id;
     private String published;
     private String title;
     private String text;
     private String author;
     private String authorPictureUrl;
-    private String shareUrl;
+    private String url;
 
-    BlogPost(String id, String title, String published, String text, String author, String authorPictureUrl, String shareUrl) {
-        this.id = id;
+    BlogPost(String title, String published, String text, String author, String authorPictureUrl, String url) {
         this.title = title;
         this.published = published;
         this.text = text;
         this.author = author;
         this.authorPictureUrl = authorPictureUrl;
-        this.shareUrl = shareUrl;
+        this.url = url;
     }
 
     public String getTitle() {
@@ -40,11 +38,7 @@ class BlogPost {
         return published;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getShareUrl() {
-        return shareUrl;
+    public String getUrl() {
+        return url;
     }
 }

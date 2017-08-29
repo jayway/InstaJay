@@ -86,7 +86,7 @@ public class BlogFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(), BlogPostDetailActivity.class);
-                    intent.putExtra("id", blogPost.getId());
+                    intent.putExtra("url", blogPost.getUrl());
                     startActivity(intent);
                 }
             });

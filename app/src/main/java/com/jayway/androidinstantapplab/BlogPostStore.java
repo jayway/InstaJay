@@ -33,10 +33,10 @@ public class BlogPostStore {
         return blogPosts;
     }
 
-    public BlogPost getBlogPost(String id) {
+    public BlogPost getBlogPost(String url) {
         if (blogPosts != null) {
             for (BlogPost blogPost : blogPosts) {
-                if (blogPost.getId().equals(id)) {
+                if (blogPost.getUrl().equals(url)) {
                     return blogPost;
                 }
             }

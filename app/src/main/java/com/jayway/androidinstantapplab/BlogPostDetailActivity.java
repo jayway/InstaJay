@@ -25,8 +25,8 @@ public class BlogPostDetailActivity extends AppCompatActivity {
             finish();
             return;
         }
-        String id = intent.getStringExtra("id");
-        final BlogPost blogPost = BlogPostStore.getInstance(this).getBlogPost(id);
+        String url = intent.getStringExtra("url");
+        final BlogPost blogPost = BlogPostStore.getInstance(this).getBlogPost(url);
         if (blogPost == null) {
             finish();
             return;
@@ -59,7 +59,7 @@ public class BlogPostDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, blogPost.getShareUrl());
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, blogPost.getUrl());
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, blogPost.getTitle());
                 startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.send_to)));
             }
