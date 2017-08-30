@@ -1,4 +1,4 @@
-package com.jayway.androidinstantapplab;
+package com.jayway.instajay;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

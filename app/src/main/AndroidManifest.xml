@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jayway.androidinstantapplab">
+    package="com.jayway.instajay">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.jayway.androidinstantapplab.HomeActivity"
+            android:name="com.jayway.instajay.HomeActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.jayway.androidinstantapplab.BlogPostDetailActivity"
+            android:name="com.jayway.instajay.BlogPostDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:parentActivityName="com.jayway.androidinstantapplab.HomeActivity"
+            android:parentActivityName="com.jayway.instajay.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jayway Instant App</string>
+    <string name="app_name">InstaJay</string>
     <string name="action_settings">Settings</string>
     <string name="blog">"Blog"</string>
     <string name="events">"Events"</string>

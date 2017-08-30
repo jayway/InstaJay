@@ -1,4 +1,4 @@
-package com.jayway.androidinstantapplab;
+package com.jayway.instajay;
 
 class BlogPost {
 
