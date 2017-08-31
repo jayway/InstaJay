@@ -1,0 +1,10 @@
+apply plugin: 'com.android.instantapp'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+}
+
+dependencies {
+    implementation project(":instajay-base")
+}
