@@ -21,6 +21,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="www.jayway.com" />
+                <data android:host="jayway.com" />
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true" android:order="2">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="blog.jayway.com" />
+            </intent-filter>
+
+            <meta-data android:name="default-url" android:value="https://blog.jayway.com" />
+
         </activity>
         <activity
             android:name="com.jayway.instajay.BlogPostDetailActivity"
@@ -35,6 +57,17 @@
             android:screenOrientation="portrait"
             android:parentActivityName="com.jayway.instajay.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter  android:autoVerify="true" android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="blog.jayway.com"/>
+                <data android:pathPattern="/.*" />
+            </intent-filter>
+
         </activity>
     </application>
 

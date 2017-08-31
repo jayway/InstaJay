@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class BlogPostDetailActivity extends AppCompatActivity {
+
+    private static final String TAG = BlogPostDetailActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,9 +28,19 @@ public class BlogPostDetailActivity extends AppCompatActivity {
             finish();
             return;
         }
-        String url = intent.getStringExtra("url");
+//        String url = intent.getStringExtra("url");
+//        final BlogPost blogPost = BlogPostStore.getInstance(this).getBlogPost(url);
+//        if (blogPost == null) {
+//            finish();
+//            return;
+//        }
+
+        String url = intent.getData() == null ? "data null" : intent.getData().toString();
+        Log.d(TAG, "uri from intent: " + url);
+
         final BlogPost blogPost = BlogPostStore.getInstance(this).getBlogPost(url);
         if (blogPost == null) {
+            Log.d(TAG, "could not find blog post, finishing");
             finish();
             return;
         }
