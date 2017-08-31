@@ -4,6 +4,8 @@ android {
 
     baseFeature true
 
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
     signingConfigs {
         debug {
             keyAlias 'androiddebugkey'
@@ -12,8 +14,6 @@ android {
             storePassword "android"
         }
     }
-    compileSdkVersion 26
-    buildToolsVersion "26.0.0"
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 26
