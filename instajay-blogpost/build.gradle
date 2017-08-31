@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.feature'
 
 android {
     compileSdkVersion project.compileSdkVersion
@@ -6,7 +6,6 @@ android {
 
 
     defaultConfig {
-        applicationId "com.jayway.instajay"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
@@ -26,6 +25,5 @@ android {
 }
 
 dependencies {
-    implementation project(":instajay-base")
-    implementation project(":instajay-blogpost")
+    implementation project(':instajay-base')
 }

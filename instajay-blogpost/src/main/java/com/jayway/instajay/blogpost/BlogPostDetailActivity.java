@@ -1,4 +1,4 @@
-package com.jayway.instajay;
+package com.jayway.instajay.blogpost;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jayway.instajay.BlogPost;
+import com.jayway.instajay.BlogPostStore;
 import com.squareup.picasso.Picasso;
 
 public class BlogPostDetailActivity extends AppCompatActivity {
@@ -53,7 +55,7 @@ public class BlogPostDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView published = findViewById(R.id.published);
-        published.setText(String.format(getString(R.string.published_by), blogPost.getPublished(), blogPost.getAuthor()));
+        published.setText(String.format(getString(com.jayway.instajay.R.string.published_by), blogPost.getPublished(), blogPost.getAuthor()));
 
         TextView title = findViewById(R.id.title);
         title.setText(blogPost.getTitle());
@@ -63,7 +65,7 @@ public class BlogPostDetailActivity extends AppCompatActivity {
 
         ImageView authorPicture = findViewById(R.id.authorPicture);
         if (!TextUtils.isEmpty(blogPost.getAuthorPictureUrl())) {
-            Picasso.with(this).load(blogPost.getAuthorPictureUrl()).error(R.drawable.unknown_author).into(authorPicture);
+            Picasso.with(this).load(blogPost.getAuthorPictureUrl()).error(com.jayway.instajay.R.drawable.unknown_author).into(authorPicture);
         }
 
         FloatingActionButton fab = findViewById(R.id.fab);

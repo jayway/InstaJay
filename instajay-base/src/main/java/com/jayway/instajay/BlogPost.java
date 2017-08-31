@@ -1,6 +1,6 @@
 package com.jayway.instajay;
 
-class BlogPost {
+public class BlogPost {
 
     private String published;
     private String title;
