@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.jayway.instajay",
+    "sha256_cert_fingerprints":
+    ["9F:F1:B4:9E:D3:50:67:54:6F:BB:C4:A0:2E:B6:45:39:75:E6:BC:E4:15:03:31:94:7B:E3:74:48:12:6B:95:59"]
+  }
+}]
