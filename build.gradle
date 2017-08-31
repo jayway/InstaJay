@@ -16,6 +16,12 @@ buildscript {
 }
 
 allprojects {
+
+    ext {
+        compileSdkVersion=26
+        buildToolsVersion="26.0.0"
+    }
+
     repositories {
         google()
         jcenter()

@@ -4,8 +4,8 @@ android {
 
     baseFeature true
 
-    compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 26

@@ -1,8 +1,8 @@
 apply plugin: 'com.android.instantapp'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
 }
 
 dependencies {
