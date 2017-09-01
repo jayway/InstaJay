@@ -1,0 +1,10 @@
+[{
+  "imageUrl": "https://blog.jayway.com/wp-content/uploads/2014/10/poulsen-150x150.jpg",
+  "date": "2017-09-13",
+  "time": "07:30 - 09:00",
+  "location": "Jayway Malmö",
+  "text": "<p>On my most recent assignment I was faced with the challenge of downloading a pdf file from an API and displaying it in the browser.<\/p>\r\n<p>Normally, the API would provide a json-object with a link to the pdf, which can then be used to open a new browser tab\/window and the browser or platform takes care of the rest.<\/p>\r\n<p>In this case however the API was designed for native mobile apps and required the presence of a custom &#8216;api-key&#8217; http-header, which made it impossible to just provide the url to the browser.<\/p>\r\n<p>To solve this it was necessary to download the file to memory with an XHR request and then get the browser to open or download it with whatever plugin\/UI it normally uses for pdf file.<\/p>\r\n<p>For the XHR request we use the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/API\/Fetch_API\">Fetch API<\/a> with the <a href=\"https:\/\/github.com\/github\/fetch\">whatwg-fetch<\/a> polyfill. In essence the Fetch API fetch() method returns a response, from which a blob can be created. This blob object can be use to create an objectURL, which can then be used as href in a link.<\/p>",
+  "title": "Breakfast Seminar on IoT",
+  "url": "https://blog.jayway.com/2017/07/13/open-pdf-downloaded-api-javascript/"
+},
+]
