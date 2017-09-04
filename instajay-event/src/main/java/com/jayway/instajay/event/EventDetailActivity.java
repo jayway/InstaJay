@@ -1,4 +1,4 @@
-package com.jayway.instajay;
+package com.jayway.instajay.event;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,15 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jayway.instajay.BlogPost;
+import com.jayway.instajay.BlogPostStore;
+import com.jayway.instajay.Event;
+import com.jayway.instajay.EventStore;
 import com.squareup.picasso.Picasso;
 
 public class EventDetailActivity extends AppCompatActivity {
+
+    private static final String TAG = EventDetailActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,9 +33,13 @@ public class EventDetailActivity extends AppCompatActivity {
             finish();
             return;
         }
-        String url = intent.getStringExtra("url");
+
+        String url = intent.getData() == null ? "data null" : intent.getData().toString();
+        Log.d(TAG, "uri from intent: " + url);
+
         final Event event = EventStore.getInstance(this).getEvent(url);
         if (event == null) {
+            Log.d(TAG, "could not find event, finishing");
             finish();
             return;
         }
@@ -58,7 +68,7 @@ public class EventDetailActivity extends AppCompatActivity {
             image.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
-                    Picasso.with(EventDetailActivity.this).load(event.getImageUrl()).error(R.drawable.unknown_author).resize(image.getWidth(), 0).into(image);
+                    Picasso.with(EventDetailActivity.this).load(event.getImageUrl()).error(com.jayway.instajay.R.drawable.unknown_author).resize(image.getWidth(), 0).into(image);
                 }
             });
         }
@@ -71,7 +81,7 @@ public class EventDetailActivity extends AppCompatActivity {
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_TEXT, event.getUrl());
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, event.getTitle());
-                startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.send_to)));
+                startActivity(Intent.createChooser(shareIntent, getResources().getText(com.jayway.instajay.R.string.send_to)));
             }
         });
     }

@@ -1,12 +1,14 @@
 package com.jayway.instajay;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class EventsFragment extends Fragment {
+
+    private static final String TAG = EventsFragment.class.getSimpleName();
 
     private RecyclerView recyclerView;
 
@@ -88,8 +92,11 @@ public class EventsFragment extends Fragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getContext(), EventDetailActivity.class);
-                    intent.putExtra("url", event.getUrl());
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(event.getUrl()));
+                    intent.setPackage(getContext().getPackageName());
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    intent.addCategory(Intent.CATEGORY_DEFAULT);
+                    Log.d(TAG, "Launching " + event.getUrl());
                     startActivity(intent);
                 }
             });

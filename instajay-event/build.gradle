@@ -1,12 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.feature'
 
 android {
-    compileSdkVersion project.compileSdkVersion
-    buildToolsVersion project.buildToolsVersion
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
 
 
     defaultConfig {
-        applicationId "com.jayway.instajay"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
@@ -26,7 +25,10 @@ android {
 }
 
 dependencies {
-    implementation project(":instajay-base")
-    implementation project(":instajay-blogpost")
-    implementation project(":instajay-event")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':instajay-base')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }

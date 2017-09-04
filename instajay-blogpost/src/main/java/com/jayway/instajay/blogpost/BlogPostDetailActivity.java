@@ -76,7 +76,7 @@ public class BlogPostDetailActivity extends AppCompatActivity {
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, blogPost.getUrl());
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, blogPost.getTitle());
-                startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.send_to)));
+                startActivity(Intent.createChooser(shareIntent, getResources().getText(com.jayway.instajay.R.string.send_to)));
             }
         });
     }

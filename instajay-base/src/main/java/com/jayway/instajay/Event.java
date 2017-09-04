@@ -1,6 +1,6 @@
 package com.jayway.instajay;
 
-class Event {
+public class Event {
 
     private String date;
     private String time;

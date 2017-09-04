@@ -1,1 +1,1 @@
-include ':instajay-base', ':instajay-installed', ':instajay-instant', ':instajay-blogpost'
+include ':instajay-base', ':instajay-installed', ':instajay-instant', ':instajay-blogpost', ':instajay-event'
