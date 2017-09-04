@@ -17,6 +17,7 @@
         <activity
             android:name="com.jayway.instajay.MainActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTop"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

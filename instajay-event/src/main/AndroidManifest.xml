@@ -11,6 +11,10 @@
             android:parentActivityName="com.jayway.instajay.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jayway.instajay.MainActivity" />
+
             <intent-filter  android:autoVerify="true" android:order="1">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

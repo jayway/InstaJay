@@ -89,12 +89,8 @@ public class BlogFragment extends Fragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(blogPost.getUrl()));
-                    intent.setPackage(getContext().getPackageName());
-                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                    intent.addCategory(Intent.CATEGORY_DEFAULT);
                     Log.d(TAG, "Launching " + blogPost.getUrl());
-                    startActivity(intent);
+                    NavigationUtil.startAppLink(getContext(), blogPost.getUrl());
                 }
             });
         }

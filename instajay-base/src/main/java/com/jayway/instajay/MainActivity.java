@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
+
+        String url = getIntent() != null && getIntent().getData() != null ? getIntent().getData().toString() : null;
+        if (url != null && url.contains("jayway.com/events")) {
+            tabLayout.getTabAt(1).select();
+        }
     }
 
     public class PagerAdapter extends FragmentPagerAdapter {

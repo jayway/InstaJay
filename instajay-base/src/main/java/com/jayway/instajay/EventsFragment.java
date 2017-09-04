@@ -92,12 +92,8 @@ public class EventsFragment extends Fragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(event.getUrl()));
-                    intent.setPackage(getContext().getPackageName());
-                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                    intent.addCategory(Intent.CATEGORY_DEFAULT);
                     Log.d(TAG, "Launching " + event.getUrl());
-                    startActivity(intent);
+                    NavigationUtil.startAppLink(getContext(), event.getUrl());
                 }
             });
         }

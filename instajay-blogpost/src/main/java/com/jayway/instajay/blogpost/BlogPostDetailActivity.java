@@ -9,12 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jayway.instajay.BlogPost;
 import com.jayway.instajay.BlogPostStore;
+import com.jayway.instajay.NavigationUtil;
 import com.squareup.picasso.Picasso;
 
 public class BlogPostDetailActivity extends AppCompatActivity {
@@ -82,7 +84,17 @@ public class BlogPostDetailActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        return super.onSupportNavigateUp();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (isTaskRoot()) {
+                    NavigationUtil.startAppLink(this, NavigationUtil.MAIN_ACTIVITY_URL);
+                    finish();
+                } else {
+                    onBackPressed();
+                }
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
