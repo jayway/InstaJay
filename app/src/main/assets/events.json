@@ -1,10 +1,28 @@
 [{
-  "imageUrl": "https://blog.jayway.com/wp-content/uploads/2014/10/poulsen-150x150.jpg",
+  "imageUrl": "https://static1.squarespace.com/static/57f0c3a629687faa60f2aa57/59a064cfbebafb2352242508/5992a494d7bdce3e741969d0/1502803418682/https-%252F%252Fcdn.evbuc.com%252Fimages%252F34100220%252F178954044518%252F1%252Foriginal.png?format=1000w",
   "date": "2017-09-13",
   "time": "07:30 - 09:00",
   "location": "Jayway Malmö",
-  "text": "<p>On my most recent assignment I was faced with the challenge of downloading a pdf file from an API and displaying it in the browser.<\/p>\r\n<p>Normally, the API would provide a json-object with a link to the pdf, which can then be used to open a new browser tab\/window and the browser or platform takes care of the rest.<\/p>\r\n<p>In this case however the API was designed for native mobile apps and required the presence of a custom &#8216;api-key&#8217; http-header, which made it impossible to just provide the url to the browser.<\/p>\r\n<p>To solve this it was necessary to download the file to memory with an XHR request and then get the browser to open or download it with whatever plugin\/UI it normally uses for pdf file.<\/p>\r\n<p>For the XHR request we use the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/API\/Fetch_API\">Fetch API<\/a> with the <a href=\"https:\/\/github.com\/github\/fetch\">whatwg-fetch<\/a> polyfill. In essence the Fetch API fetch() method returns a response, from which a blob can be created. This blob object can be use to create an objectURL, which can then be used as href in a link.<\/p>",
+  "text": "Amazon IoT is a service that lets you securely connect your devices to the cloud without the need to host your own gateways or proxies. It handles authentication, data encryption, device handling and integration with other AWS services. Built on top of MQTT, it adds functionality for device state handling called shadows, which greatly simplifies offline device handling.",
   "title": "Breakfast Seminar on IoT",
-  "url": "https://blog.jayway.com/2017/07/13/open-pdf-downloaded-api-javascript/"
-},
+  "url": "https://www.jayway.com/events/2017/9/13/breakfast-seminar-on-iot"
+  },
+  {
+    "imageUrl": "https://static1.squarespace.com/static/57f0c3a629687faa60f2aa57/59a064cfbebafb2352242508/593fead96a4963e383a74ff8/1503567178090/ucetkvfmbc4-marius-masalar.jpg?format=750w",
+    "date": "2017-09-18",
+    "time": "18.00 - 23:00",
+    "location": "Jayway Stockholm",
+    "text": "Join like-minded souls at our office to enjoy the livestream of keynote presentations from TechCrunch Disrupt SF 2017. We will provide food, drinks and great company! Signup here: https://www.eventbrite.com/e/livestream-techcrunch-disrupt-sf-tickets-37303508799",
+    "title": "Livestream: TechCrunch Disrupt SF",
+    "url": "https://www.jayway.com/events/2017/9/18/livestream-techcrunch-disrupt-sf"
+  },
+  {
+    "imageUrl": "https://static1.squarespace.com/static/57f0c3a629687faa60f2aa57/59a064cfbebafb2352242508/595cadc0e4fcb5067521df8d/1503412946454/https-%252F%252Fcdn.evbuc.com%252Fimages%252F34101746%252F178954044518%252F1%252Foriginal.png?format=1000w",
+    "date": "2017-10-10",
+    "time": "17.30 - 22:00",
+    "location": "Jayway Stockholm",
+    "text": "On October 10th we're hosting our yearly event at our Stockholm office where you'll get the chance to learn all about future technology and try out the gadgets that will radically transform the way we think.",
+    "title": "Tech Frenzy Sthlm - Machine Learning, Digital Assistants, AR/VR and more",
+    "url": "https://www.jayway.com/events/techfrenzysthlm"
+  }
 ]

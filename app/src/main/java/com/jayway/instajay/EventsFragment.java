@@ -36,8 +36,8 @@ public class EventsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_events, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerView);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setAdapter(new EventsFragment.EventsAdapter(EventStore.getInstance(getContext()).getEvents()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new EventsFragment.EventsAdapter(EventStore.getInstance(getContext()).getEvents()));
         return rootView;
     }
 
@@ -88,7 +88,7 @@ public class EventsFragment extends Fragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getContext(), BlogPostDetailActivity.class);
+                    Intent intent = new Intent(getContext(), EventDetailActivity.class);
                     intent.putExtra("url", event.getUrl());
                     startActivity(intent);
                 }

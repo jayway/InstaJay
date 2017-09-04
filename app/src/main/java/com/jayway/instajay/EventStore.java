@@ -18,8 +18,6 @@ public class EventStore {
 
     private EventStore(Context context) {
         mockBlockPosts(context);
-
-        Gson gson = new Gson();
     }
 
     public static EventStore getInstance(Context context) {
@@ -48,7 +46,7 @@ public class EventStore {
 
         String json = readFromAsset(context);
         if (json != null) {
-            Type listType = new TypeToken<List<BlogPost>>(){}.getType();
+            Type listType = new TypeToken<List<Event>>(){}.getType();
             events = new Gson().fromJson(json, listType);
         } else {
             events = new ArrayList<>();
